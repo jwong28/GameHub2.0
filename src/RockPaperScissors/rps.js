@@ -5,6 +5,8 @@ const result = document.querySelector(".result > p");
 const rock = document.getElementById("Rock");
 const paper = document.getElementById("Paper");
 const scissor = document.getElementById("Scissor");
+const happyEmoticon = document.getElementById("happy");
+const sadEmoticon = document.getElementById("sad");
 let user = 0;
 let comp = 0;
 
@@ -26,12 +28,16 @@ function win(userChoice, computerChoice){
     compScore.innerHTML = comp;
     result.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You Win!`;
     document.getElementById(convertToWord(userChoice)).classList.add('win');
-    document.getElementById("userHappy").style.visibility = "visible";
-    document.getElementById("compSad").style.visibility = "visible";
+    happyEmoticon.style.visibility = "visible";
+    sadEmoticon.style.visibility = "visible";
+    happyEmoticon.style.left = "-200px";
+    sadEmoticon.style.right = "-200px";
     setTimeout(() => document.getElementById(convertToWord(userChoice)).classList.remove('win'),300);
     setTimeout(() => {
-        document.getElementById("userHappy").style.visibility = "hidden";
-        document.getElementById("compSad").style.visibility = "hidden";
+        happyEmoticon.style.visibility = "hidden";
+        sadEmoticon.style.visibility = "hidden";
+        happyEmoticon.style.left = "";
+        sadEmoticon.style.right = "";
     },2000);
 }
 
@@ -41,13 +47,17 @@ function lose(userChoice, computerChoice){
     compScore.innerHTML = comp;
     result.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You Lose...`;
     document.getElementById(convertToWord(userChoice)).classList.add('lose');
-    document.getElementById("userSad").style.visibility = "visible";
-    document.getElementById("compHappy").style.visibility = "visible";
+    happyEmoticon.style.visibility = "visible";
+    sadEmoticon.style.visibility = "visible";
+    happyEmoticon.style.right = "-200px";
+    sadEmoticon.style.left = "-200px";
     setTimeout(() => document.getElementById(convertToWord(userChoice)).classList.remove('lose')
     ,300);
     setTimeout(() => {
-        document.getElementById("userSad").style.visibility = "hidden";
-        document.getElementById("compHappy").style.visibility = "hidden";
+        happyEmoticon.style.visibility = "hidden";
+        sadEmoticon.style.visibility = "hidden";
+        happyEmoticon.style.right = "";
+        sadEmoticon.style.left = "";
     },2000);
 }
 

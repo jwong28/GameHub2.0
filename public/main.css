@@ -24,6 +24,18 @@ header > h1 {
     right: -30px;
 }
 
+#happy{
+    position: absolute;
+    top: 30px;
+    visibility: hidden;
+}
+
+#sad{
+    position: absolute;
+    top: 30px;
+    visibility: hidden;
+}
+
 #user {
     position: absolute;
     top: 30px;
@@ -70,12 +82,9 @@ header > h1 {
 .emotion {
     height: auto;
     width: auto;
-    max-height: 25%;
-    max-width: 25%;
-    margin: 20px auto;
-    padding: 15px 20px;
-    position: absolute;
-    visibility: hidden;
+    max-height: 100%;
+    max-width: 100%;
+    visibility: visible;
 }
 
 .image{

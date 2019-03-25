@@ -40,17 +40,13 @@
     </header>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-                <div class="image">
-                    <img class="emotion" src="/GameHub2.0/img/happy.png" id="userHappy">
-                    <img class="emotion" src="/GameHub2.0/img/sad.png" id="userSad">
-                </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="score-board">
                     <div id="user" class="badge">User</div>
                     <div id="computer" class="badge">Comp</div>
                     <span id="user-score">0</span>:<span id="computer-score">0</span>
+                    <div><img class="emotion" id="happy" src="/GameHub2.0/img/happy.png"></div>
+                    <div><img class="emotion" id="sad" src="/GameHub2.0/img/sad.png"></div>
                 </div>
                 <div class="result">
                     <p>Good Luck!</p>
@@ -67,12 +63,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="image">
                     <img class="emotion" src="/GameHub2.0/img/happy.png" id="compHappy">
                     <img class="emotion" src="/GameHub2.0/img/sad.png" id="compSad">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <script src="/GameHub2.0/src/RockPaperScissors/rps.js"></script>
