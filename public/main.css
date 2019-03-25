@@ -18,6 +18,10 @@ header > h1 {
     text-align: center;
 }
 
+tbody{
+    color: #d6d802;
+}
+
 #computer {
     position: absolute;
     top: 30px;
@@ -87,6 +91,11 @@ header > h1 {
     visibility: visible;
 }
 
+.even > td > a{
+    color: #d6d802;
+    text-decoration: none;
+}
+
 .image{
     position: relative;
     overflow: hidden;
@@ -105,6 +114,15 @@ header > h1 {
 
 .navbar{
     padding: .8rem;
+}
+
+.odd{
+    background-color: rgb(9, 39, 145);
+}
+
+.odd > td > a{
+    color: #d6d802;
+    text-decoration: none;
 }
 
 .result {
@@ -135,6 +153,9 @@ header > h1 {
     box-shadow: 0 0 10px lightgreen;
 }
 
+.odd:hover, .even:hover{
+    background-color: #696969;
+}
 
 /* .content{
     position: relative;

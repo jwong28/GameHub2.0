@@ -30,12 +30,18 @@ function win(userChoice, computerChoice){
     document.getElementById(convertToWord(userChoice)).classList.add('win');
     happyEmoticon.style.visibility = "visible";
     sadEmoticon.style.visibility = "visible";
+    rock.style.pointerEvents ="none";
+    paper.style.pointerEvents ="none";
+    scissor.style.pointerEvents ="none";
     happyEmoticon.style.left = "-200px";
     sadEmoticon.style.right = "-200px";
     setTimeout(() => document.getElementById(convertToWord(userChoice)).classList.remove('win'),300);
     setTimeout(() => {
         happyEmoticon.style.visibility = "hidden";
         sadEmoticon.style.visibility = "hidden";
+        rock.style.pointerEvents ="auto";
+        paper.style.pointerEvents ="auto";
+        scissor.style.pointerEvents ="auto";
         happyEmoticon.style.left = "";
         sadEmoticon.style.right = "";
     },2000);
@@ -49,6 +55,9 @@ function lose(userChoice, computerChoice){
     document.getElementById(convertToWord(userChoice)).classList.add('lose');
     happyEmoticon.style.visibility = "visible";
     sadEmoticon.style.visibility = "visible";
+    rock.style.pointerEvents ="none";
+    paper.style.pointerEvents ="none";
+    scissor.style.pointerEvents ="none";
     happyEmoticon.style.right = "-200px";
     sadEmoticon.style.left = "-200px";
     setTimeout(() => document.getElementById(convertToWord(userChoice)).classList.remove('lose')
@@ -56,6 +65,9 @@ function lose(userChoice, computerChoice){
     setTimeout(() => {
         happyEmoticon.style.visibility = "hidden";
         sadEmoticon.style.visibility = "hidden";
+        rock.style.pointerEvents ="auto";
+        paper.style.pointerEvents ="auto";
+        scissor.style.pointerEvents ="auto";
         happyEmoticon.style.right = "";
         sadEmoticon.style.left = "";
     },2000);

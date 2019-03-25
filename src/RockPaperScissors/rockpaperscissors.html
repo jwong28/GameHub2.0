@@ -12,65 +12,74 @@
 <link rel="stylesheet" href="/GameHub2.0/public/main.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/GameHub2.0/public/home.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Games</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Genre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
-    <header>
-        <h1>Rock Paper Scissors</h1>
-    </header>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="score-board">
-                    <div id="user" class="badge">User</div>
-                    <div id="computer" class="badge">Comp</div>
-                    <span id="user-score">0</span>:<span id="computer-score">0</span>
-                    <div><img class="emotion" id="happy" src="/GameHub2.0/img/happy.png"></div>
-                    <div><img class="emotion" id="sad" src="/GameHub2.0/img/sad.png"></div>
-                </div>
-                <div class="result">
-                    <p>Good Luck!</p>
-                </div>
-                <div class="choices">
-                    <div class="choice" id="Rock">
-                        <img src="/GameHub2.0/img/rock.png">
-                    </div>
-                    <div class="choice" id="Paper">
-                        <img src="/GameHub2.0/img/paper.png">
-                    </div>
-                    <div class="choice" id="Scissor">
-                        <img src="/GameHub2.0/img/scissor.png">
-                    </div>
-                </div>
+        <!-- Navigation -->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/GameHub2.0/public/home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/GameHub2.0/public/listing.html">Games</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Genre
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/GameHub2.0/public/listing.html">Action</a>
+                                <a class="dropdown-item" href="/GameHub2.0/public/listing.html">Horror</a>
+                                <a class="dropdown-item" href="/GameHub2.0/public/listing.html">Shooting</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/GameHub2.0/public/about.html">About</a>
+                    </li>
+                </ul>
             </div>
-            <!-- <div class="col-md-3">
-                <div class="image">
-                    <img class="emotion" src="/GameHub2.0/img/happy.png" id="compHappy">
-                    <img class="emotion" src="/GameHub2.0/img/sad.png" id="compSad">
+        </nav> 
+        <header>
+            <h1>Rock Paper Scissors</h1>
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="score-board">
+                        <div id="user" class="badge">User</div>
+                        <div id="computer" class="badge">Comp</div>
+                        <span id="user-score">0</span>:<span id="computer-score">0</span>
+                        <div><img class="emotion" id="happy" src="/GameHub2.0/img/happy.png"></div>
+                        <div><img class="emotion" id="sad" src="/GameHub2.0/img/sad.png"></div>
+                    </div>
+                    <div class="result">
+                        <p>Good Luck!</p>
+                    </div>
+                    <div class="choices">
+                        <div class="choice" id="Rock">
+                            <img src="/GameHub2.0/img/rock.png">
+                        </div>
+                        <div class="choice" id="Paper">
+                            <img src="/GameHub2.0/img/paper.png">
+                        </div>
+                        <div class="choice" id="Scissor">
+                            <img src="/GameHub2.0/img/scissor.png">
+                        </div>
+                    </div>
                 </div>
-            </div> -->
+                <!-- <div class="col-md-3">
+                    <div class="image">
+                        <img class="emotion" src="/GameHub2.0/img/happy.png" id="compHappy">
+                        <img class="emotion" src="/GameHub2.0/img/sad.png" id="compSad">
+                    </div>
+                </div> -->
+            </div>
         </div>
+        <script src="/GameHub2.0/src/RockPaperScissors/rps.js"></script>
     </div>
-    <script src="/GameHub2.0/src/RockPaperScissors/rps.js"></script>
 </body>
 </html>
