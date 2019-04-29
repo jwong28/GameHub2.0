@@ -1,9 +1,11 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import './App.css';
+
 
 import TicTacToe from './components/games/TicTacToe'
 import axios from "axios"
