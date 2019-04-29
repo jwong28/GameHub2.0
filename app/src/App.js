@@ -1,9 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
 import './App.css';
-import TicTacToe from './TicTacToe'
+
+import TicTacToe from './components/games/TicTacToe'
 import axios from "axios"
 
+import Navbar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+
+import { Provider } from "react-redux";
+import store from "./store";
+
+import PrivateRoute from "./components/private-route/PrivateRoute";
+import Dashboard from "./components/dashboard/Dashboard";
+// Check for token to keep user logged in
+if (localStorage.jwtToken) {
+  // Set auth token header auth
+  const token = localStorage.jwtToken;
+  setAuthToken(token);
+  // Decode token and get user info and exp
+  const decoded = jwt_decode(token);
+  // Set user and isAuthenticated
+  store.dispatch(setCurrentUser(decoded));
+// Check for expired token
+  const currentTime = Date.now() / 1000; // to get in milliseconds
+  if (decoded.exp < currentTime) {
+    // Logout user
+    store.dispatch(logoutUser());
+    // Redirect to login
+    window.location.href = "./login";
+  }
+}
 /* Changes from original tutorial
  *  - Here we import the tic-tac-toe game from a module
  *    so we import the folder, and use the name
@@ -116,62 +148,82 @@ class App extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div>
-        <ul>
-          {data.length <= 0
-            ? "NO DB ENTRIES YET"
-            : data.map(dat => (
-                <li style={{ padding: "10px" }} key={data.message}>
-                  <span style={{ color: "gray" }}> id: </span> {dat.id} <br />
-                  <span style={{ color: "gray" }}> data: </span>
-                  {dat.message}
-                </li>
-              ))}
-        </ul>
-        <div style={{ padding: "10px" }}>
-          <input
-            type="text"
-            onChange={e => this.setState({ message: e.target.value })}
-            placeholder="add something in the database"
-            style={{ width: "200px" }}
-          />
-          <button onClick={() => this.putDataToDB(this.state.message)}>
-            ADD
-          </button>
-        </div>
-        <div style={{ padding: "10px" }}>
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ idToDelete: e.target.value })}
-            placeholder="put id of item to delete here"
-          />
-          <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
-            DELETE
-          </button>
-        </div>
-        <div style={{ padding: "10px" }}>
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ idToUpdate: e.target.value })}
-            placeholder="id of item to update here"
-          />
-          <input
-            type="text"
-            style={{ width: "200px" }}
-            onChange={e => this.setState({ updateToApply: e.target.value })}
-            placeholder="put new value of the item here"
-          />
-          <button
-            onClick={() =>
-              this.updateDB(this.state.idToUpdate, this.state.updateToApply)
-            }
-          >
-            UPDATE
-          </button>
-        </div>
-      </div>
+      // <div className="App">
+      //   <Navbar />
+      //   <Landing />
+      // </div>
+      <React.Fragment>
+        <Provider store={store}>
+          <Router>
+            <div className="App">
+              <Navbar />
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+            </div>
+          </Router>
+          <div>
+            <TicTacToe />
+            <ul>
+              {data.length <= 0
+                ? "NO DB ENTRIES YET"
+                : data.map(dat => (
+                    <li style={{ padding: "10px" }} key={data.message}>
+                      <span style={{ color: "gray" }}> id: </span> {dat.id} <br />
+                      <span style={{ color: "gray" }}> data: </span>
+                      {dat.message}
+                    </li>
+                  ))}
+            </ul>
+            <div style={{ padding: "10px" }}>
+              <input
+                type="text"
+                onChange={e => this.setState({ message: e.target.value })}
+                placeholder="add something in the database"
+                style={{ width: "200px" }}
+              />
+              <button onClick={() => this.putDataToDB(this.state.message)}>
+                ADD
+              </button>
+            </div>
+            <div style={{ padding: "10px" }}>
+              <input
+                type="text"
+                style={{ width: "200px" }}
+                onChange={e => this.setState({ idToDelete: e.target.value })}
+                placeholder="put id of item to delete here"
+              />
+              <button onClick={() => this.deleteFromDB(this.state.idToDelete)}>
+                DELETE
+              </button>
+            </div>
+            <div style={{ padding: "10px" }}>
+              <input
+                type="text"
+                style={{ width: "200px" }}
+                onChange={e => this.setState({ idToUpdate: e.target.value })}
+                placeholder="id of item to update here"
+              />
+              <input
+                type="text"
+                style={{ width: "200px" }}
+                onChange={e => this.setState({ updateToApply: e.target.value })}
+                placeholder="put new value of the item here"
+              />
+              <button
+                onClick={() =>
+                  this.updateDB(this.state.idToUpdate, this.state.updateToApply)
+                }
+              >
+                UPDATE
+              </button>
+            </div>
+          </div>
+        </Provider>
+      </React.Fragment> 
     );
   // }
     // return (
