@@ -6,7 +6,6 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import './App.css';
 
-
 import TicTacToe from './components/games/TicTacToe'
 import axios from "axios"
 

@@ -91,38 +91,51 @@ class Game extends Component {
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
+
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
     return (
       <div>
-      <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content />
-        <meta name="author" content />
-        <title>GameHub</title>
-        {/* Bootstrap core CSS */}
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-        {/* Custom fonts for this template */}
-        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        {/* Custom styles for this template */}
-        <link href="./css/freelancer.min.css" rel="stylesheet" />
-      <h1>Multiplayer Tic-Tac-Toe</h1> 
+        <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+          <meta name="description" content />
+          <meta name="author" content />
+          <title>GameHub</title>
+          {/* Bootstrap core CSS */}
+          <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+          {/* Custom fonts for this template */}
+          <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+          <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+          {/* Custom styles for this template */}
+          <link href="./css/freelancer.min.css" rel="stylesheet" />
+        <h1>Multiplayer Tic-Tac-Toe</h1> 
 
-      <div className="game">
-        <div className="game-board">
+        <div className="game">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <h3>Score</h3>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div className="game-board">
 
-          <Board 
-                squares={this.state.squares}
-                onClick={(i) => this.handleClick(i)} />
+                <Board 
+                      squares={this.state.squares}
+                      onClick={(i) => this.handleClick(i)} />
+              </div>
+            </div>
+          </div>
+          <div className="game-info">
+            <div>{status}</div>
+          </div>
         </div>
-
-        <div className="game-info">
-          <div>{status}</div>
         </div>
-      </div>
       </div>
     );
   }
