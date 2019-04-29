@@ -57,8 +57,6 @@ class App extends Component {
   };
 
   // when component mounts, first thing it does is fetch all existing data in our db
-  // then we incorporate a polling logic so that we can easily see if our db has 
-  // changed and implement those changes into our UI
   componentDidMount() {
     this.getDataFromDb();
     if (!this.state.intervalIsSet) {
@@ -67,8 +65,7 @@ class App extends Component {
     }
   }
 
-  // never let a process live forever 
-  // always kill a process everytime we are done using it
+  // kill a process everytime we are done using it
   componentWillUnmount() {
     if (this.state.intervalIsSet) {
       clearInterval(this.state.intervalIsSet);
@@ -81,7 +78,6 @@ class App extends Component {
   // for our back end, we use the object id assigned by MongoDB to modify 
   // data base entries
 
-  // our first get method that uses our backend api to 
   // fetch data from our data base
   getDataFromDb = () => {
     fetch("http://localhost:3001/api/getData")
@@ -139,19 +135,9 @@ class App extends Component {
     });
   };
 
-
-  // here is our UI
-  // it is easy to understand their functions when you 
-  // see them render into our screen
-
-  ////
   render() {
     const { data } = this.state;
     return (
-      // <div className="App">
-      //   <Navbar />
-      //   <Landing />
-      // </div>
       <React.Fragment>
         <Provider store={store}>
           <Router>
@@ -225,12 +211,6 @@ class App extends Component {
         </Provider>
       </React.Fragment> 
     );
-  // }
-    // return (
-    //   <div>
-    //     <TicTacToe />
-    //   </div>
-    // );
   }
 }
 

@@ -13,6 +13,7 @@ import {
       case SET_CURRENT_USER:
         return {
           ...state,
+          //If no empty fields
           isAuthenticated: !isEmpty(action.payload),
           user: action.payload
         };
