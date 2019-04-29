@@ -33,6 +33,7 @@ return (
               Logout
             </button>
           </div>
+          <a href="home.html">Connect</a>
         </div>
       </div>
     );
