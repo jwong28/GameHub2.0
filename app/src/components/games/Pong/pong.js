@@ -1,11 +1,10 @@
-let playArea;
 let ball;
 let player;
 let comp;
 let scoreBoard;
 
 function setup(){
-playArea = createCanvas(windowWidth, windowHeight/1.3);
+createCanvas(windowWidth, windowHeight/1.31);
 ball = new pongBall();
 player = new playerRect();
 comp = new compRect();
