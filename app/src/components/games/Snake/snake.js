@@ -26,11 +26,11 @@ function draw(){
     }
     snake.update();
     snake.show();
+    fill(255,0,0);
+    rect(target.x,target.y,20,20);
     if(snake.endGame()){
         snake.endScreen();
     }
-    fill(255,0,0);
-    rect(target.x,target.y,20,20);
 }
 
 function collide(){

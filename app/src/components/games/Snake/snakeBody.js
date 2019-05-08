@@ -25,20 +25,11 @@ function snakeBody(){
     }
     
     this.endGame = function(){
-        // if(this.body.length < 3) return false;
         let x = this.body[this.body.length-1].x;
         let y = this.body[this.body.length-1].y;
         for(let i=0;i<this.body.length-1;i++){
             let part = this.body[i];
-            print(this.body.length);
-            print('part X: ' + part.x);
-            print('part Y: ' + part.y);
-            print('X: ' + x);
-            print('Y: ' + y);
-            if(part.x == x && part.y == y){
-                // if(this.body.length == 1) return false;
-                return true;
-            }
+            if(part.x == x && part.y == y){return true;}
         }
         if(x > width+1 || x < 0 || y > height+1 || y < 0) return true;
         return false;
@@ -46,7 +37,6 @@ function snakeBody(){
 
     this.show = function(){
         for(let i=0;i<this.body.length;i++){
-            noStroke();
             fill(255);
             rect(this.body[i].x,this.body[i].y,20,20);
         }
