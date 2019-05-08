@@ -1,23 +1,64 @@
 function snakeBody(){
     this.body = [head];
+    this.velocity = createVector(0,0);
 
     this.update = function(){
-        print(this.body);
-        for(let i=this.body.length-1;i>1;i--){
-            this.body[i].coord = this.body[i-1].coord;
-        }
-    }
-    
-    this.show = function(){
-        noStroke();
+        head = this.body[this.body.length-1].copy();
+        this.body.shift();
+        head.add(this.velocity);
+        head.x = constrain(head.x,-ratio,floor(width)+ceil(ratio-width%ratio));
+        head.y = constrain(head.y,-ratio,floor(height)+ceil(ratio-height%ratio));
+        this.body.push(head);
+        textAlign(CENTER);
+        textSize(20);
         fill(255);
-        for(let i=this.body.length-1;i>1;i--){
-            rect(this.body[i].coord.x,this.body[i].coord.y,20);
+        text('Score: ' + this.body.length,width - 50, 20);
+    }
+    
+    this.endScreen = function(){
+        background(255,0,0);
+        textAlign(CENTER);
+        textSize(50);
+        fill(255);
+        text('Score: ' + this.body.length,width/2, height/2);
+        noLoop();
+    }
+    
+    this.endGame = function(){
+        // if(this.body.length < 3) return false;
+        let x = this.body[this.body.length-1].x;
+        let y = this.body[this.body.length-1].y;
+        for(let i=0;i<this.body.length-1;i++){
+            let part = this.body[i];
+            print(this.body.length);
+            print('part X: ' + part.x);
+            print('part Y: ' + part.y);
+            print('X: ' + x);
+            print('Y: ' + y);
+            if(part.x == x && part.y == y){
+                // if(this.body.length == 1) return false;
+                return true;
+            }
+        }
+        if(x > width+1 || x < 0 || y > height+1 || y < 0) return true;
+        return false;
+    }
+
+    this.show = function(){
+        for(let i=0;i<this.body.length;i++){
+            noStroke();
+            fill(255);
+            rect(this.body[i].x,this.body[i].y,20,20);
         }
     }
     
-    this.insert = function(food){
-        food.notFoodAnymore();
-        this.body.push(food);
+    this.insert = function(){
+        head = this.body[this.body.length-1].copy();
+        this.body.push(head);
     }
+
+    this.moveUp = function(){this.velocity.x = 0;this.velocity.y = -1*ratio;}
+    this.moveDown = function(){this.velocity.x = 0;this.velocity.y = 1*ratio;}
+    this.moveLeft = function(){this.velocity.x = -1*ratio;this.velocity.y = 0;}
+    this.moveRight = function(){this.velocity.x = 1*ratio;this.velocity.y = 0;}
 }
