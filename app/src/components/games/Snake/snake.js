@@ -1,46 +1,55 @@
 let snake;
-let ratio = 20;
+let ratio = 50;
 let head;
 let target;
 
 function setup(){
-    frameRate(ratio/2);
+    frameRate(ratio/5);
     createCanvas(windowWidth,windowHeight/1.31);
-    head = new food();
+    head = createVector(floor(random(floor(random(width/ratio)))),floor(random(floor(random(height/ratio)))));
+    head.mult(ratio);
     snake = new snakeBody();
-    head.notFoodAnymore();
-    target = new food();
+    target = createVector(floor(random(floor(random(width/ratio)))),floor(random(floor(random(height/ratio)))));
+    target.mult(ratio);
+}
+
+function newTarget(){
+    target = createVector(floor(random(floor(random(width/ratio)))),floor(random(floor(random(height/ratio)))));
+    target.mult(ratio);
 }
 
 function draw(){
     background(0);
-
-    head.update();
-    head.show();
-
-    target.update();
-    target.show();
-
-    if(head.collide(target)){
-        snake.insert(target);
-        target = new food();
+    if(this.collide(target)){
+        snake.insert();
+        this.newTarget();
     }
-
     snake.update();
     snake.show();
+    fill(255,0,0);
+    rect(target.x,target.y,ratio,ratio);
+    if(snake.endGame()){
+        snake.endScreen();
+    }
+}
+
+function collide(){
+    return (head.x === target.x && head.y === target.y);
 }
 
 function keyPressed(){
-    if(key.toUpperCase() == 'W' || keyCode == UP_ARROW){
-        head.moveUp();
-    }
-    else if(key.toUpperCase() == 'S' || keyCode == DOWN_ARROW){
-        head.moveDown();
-    }
-    else if(key.toUpperCase() == 'A' || keyCode == LEFT_ARROW){
-        head.moveLeft();
-    }
-    else if(key.toUpperCase() == 'D' || keyCode == RIGHT_ARROW){
-        head.moveRight();
+    switch(keyCode){
+        case UP_ARROW:
+            snake.moveUp();
+            break;
+        case DOWN_ARROW:
+            snake.moveDown();
+            break;
+        case LEFT_ARROW:
+            snake.moveLeft();
+            break;
+        case RIGHT_ARROW:
+            snake.moveRight();
+            break;   
     }
 }
