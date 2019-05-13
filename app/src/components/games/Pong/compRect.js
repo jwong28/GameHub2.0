@@ -28,3 +28,5 @@ function compRect() {
         this.coord.add(this.velocity);
     }
 }
+
+export default compRect;

@@ -6,7 +6,8 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import './App.css';
 
-import TicTacToe from './components/games/TicTacToe'
+import TicTacToe from './components/games/TicTacToe';
+import Snake from './components/games/Snake/snakeGame';
 import axios from "axios"
 
 import Navbar from "./components/layout/Navbar";
@@ -147,12 +148,14 @@ class App extends Component {
               <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/TicTacToe" component={TicTacToe}/>
+              <Route exact path="/Snake" component={Snake}/>
               <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
             </div>
           </Router>
-          <div>
+          {/* <div>
             <TicTacToe />
             <ul>
               {data.length <= 0
@@ -208,7 +211,7 @@ class App extends Component {
                 UPDATE
               </button>
             </div>
-          </div>
+          </div> */}
         </Provider>
       </React.Fragment> 
     );

@@ -30,3 +30,5 @@ function playerRect() {
     this.moveUp = function(){this.velocity.y -= 10;}
     this.moveDown = function(){this.velocity.y += 10;}
 }
+
+export default playerRect;
