@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Home from "./Home";
-
+import 'bootstrap/dist/css/bootstrap.css';
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();

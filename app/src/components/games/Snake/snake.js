@@ -1,10 +1,10 @@
 let snake;
-let ratio = 20;
+let ratio = 50;
 let head;
 let target;
 
 function setup(){
-    frameRate(ratio/2);
+    frameRate(ratio/5);
     createCanvas(windowWidth,windowHeight/1.31);
     head = createVector(floor(random(floor(random(width/ratio)))),floor(random(floor(random(height/ratio)))));
     head.mult(ratio);
@@ -27,7 +27,7 @@ function draw(){
     snake.update();
     snake.show();
     fill(255,0,0);
-    rect(target.x,target.y,20,20);
+    rect(target.x,target.y,ratio,ratio);
     if(snake.endGame()){
         snake.endScreen();
     }

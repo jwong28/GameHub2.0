@@ -38,7 +38,7 @@ function snakeBody(){
     this.show = function(){
         for(let i=0;i<this.body.length;i++){
             fill(255);
-            rect(this.body[i].x,this.body[i].y,20,20);
+            rect(this.body[i].x,this.body[i].y,ratio,ratio);
         }
     }
     
