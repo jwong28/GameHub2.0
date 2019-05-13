@@ -53,7 +53,6 @@ class Game extends Component {
 
   componentDidMount(){
 
-
     const displayClick = data => {
       const squares = this.state.squares.slice();
       const i = data.square_num;
@@ -85,15 +84,20 @@ class Game extends Component {
     });
   }
 
+  playerScore(){
+    let times = 0;
+    const squares = this.state.squares.slice();
+    for(let i=0;i<squares.length;i++){
+      if(squares[i] == 'X') times++;
+    }
+    return times;
+  }
 
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
-    let score = 0;
-
     if (winner) {
       status = 'Winner: ' + winner;
-      if(winner === 'X'){score++;}
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
@@ -121,7 +125,7 @@ class Game extends Component {
             <div class="col-md-8">
             <div className="game-info">
               <h3>Score</h3>
-              <div>{score}</div>
+              <div>{this.playerScore() * 100}</div>
             </div>
             </div>
             <div class="col-md-2"></div>
