@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import TicTacToe from '../games/TicTacToe'
+import pongImg from "../img/pong.png";
+import ticTacToeImg from "../img/ticTacToe.png"
+// import Pong from "../games/Pong/pongReact";
+// import pongContent from "../games/Pong/pong.html";
+// var pongContent =require('../games/Pong/pong.html');
+// import pongImng from "../img/pon"
+
 class Home extends Component {
     componentDidMount () {
         var scripts = [
@@ -62,7 +71,7 @@ class Home extends Component {
         {/* <!-- Jumbotron --> */}
         <div class="jumbotron">
             <h1 class="display-4">Welcome to our Game Hub!</h1>
-            <p class="lead">Developers Simon He, Jefferson Wong, and Ryan Ho have brought traditional classic games right to the comfort of your own home! 
+            <p class="lead">Developers Simon He and Jefferson Wong have brought traditional classic games right to the comfort of your own home! 
                             By providing a responsive and interactive design, you're able to play classic games with a click of your mouse. </p>
         </div>
         {/* <!-- Games Storage --> */}
@@ -94,12 +103,28 @@ class Home extends Component {
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Tic Tac Toe</h5>
+                        <h5 class="card-title">Tic TacToe</h5>
                     </div>
                     <div class="image m-0">
+                        {/* <TicTacToe/> */}
                         {/* <a href="/GameHub2.0/public/index.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/ticTacToe.png">
                         </a> */}
+                        {/* <a href="/GameHub2.0/public/index.html">
+                        </a> */}
+                        {/* <Link to={TicTacToe}> */}
+                        {/* <Switch>
+                            <Route exact path="/TicTacToe" component={TicTacToe}></Route>
+                        </Switch> */}
+                          {/* <Route>
+                            <TicTacToe />
+                        </Route> */}
+                        <a href='/TicTacToe'>
+                            <img class="img-thumbnail img-responsive" src={ticTacToeImg}>
+                            </img>
+                        </a>
+                        
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
@@ -123,9 +148,16 @@ class Home extends Component {
                         <h5 class="card-title">Pong Game</h5>
                     </div>
                     <div class="image m-0">
-                        {/* <a href="/GameHub2.0/src/Pong/pong.html">
-                            <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/pong.png">
-                        </a> */}
+                        {/* <Pong/> */}
+                            
+                            {/* <div dangerouslySetInnerHTML={ {__html: pongContent} } /> */}
+                            {/* <iframe src={pongContent }></iframe> */}
+                            <a href="../games/Pong/pong.html">
+                            
+                            <img class="img-thumbnail img-responsive" src={pongImg}>
+                            </img>
+                            </a>
+                            {/* <pongImg/> */}
                     </div>
                 </div>
             </div>

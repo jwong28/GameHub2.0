@@ -45,3 +45,5 @@ function keyReleased(){
         player.pause();
        }
 }
+
+export default pongjs;

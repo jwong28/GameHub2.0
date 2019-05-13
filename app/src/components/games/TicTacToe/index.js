@@ -89,9 +89,11 @@ class Game extends Component {
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
+    let score = 0;
+
     if (winner) {
       status = 'Winner: ' + winner;
-
+      if(winner === 'X'){score++;}
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
@@ -117,7 +119,10 @@ class Game extends Component {
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
+            <div className="game-info">
               <h3>Score</h3>
+              <div>{score}</div>
+            </div>
             </div>
             <div class="col-md-2"></div>
           </div>
