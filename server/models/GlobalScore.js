@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-// Create User Schema
-const HighscoreSchema = new Schema({
+// Create Global scoe Schema
+const GlobalScoreSchema = new Schema({
   game: {
     type: String,
     required: true
@@ -11,7 +11,7 @@ const HighscoreSchema = new Schema({
     required: true
   },
   score: {
-    type: String,
+    type: Number,
     required: true
   },
   date: {
@@ -21,4 +21,4 @@ const HighscoreSchema = new Schema({
 },{
   versionKey: false //removes version key from db
 });
-module.exports = User = mongoose.model("users", UserSchema);
+module.exports = GlobalScore = mongoose.model("GlobalScore", GlobalScoreSchema);

@@ -1,4 +1,4 @@
-function userScore(){
+export function userScore(){
     this.score = 0;
     this.location = createVector(width/2,height/2);
     this.win = function(){this.score++;}
@@ -23,3 +23,5 @@ function userScore(){
         }
     }
 }
+
+// export default userScore;
