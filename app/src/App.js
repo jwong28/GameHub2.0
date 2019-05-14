@@ -7,7 +7,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import './App.css';
 
 import TicTacToe from './components/games/TicTacToe';
-import Snake from './components/games/Snake/snakeGame';
+// import Snake from './components/games/Snake/snakeGame';
 import axios from "axios"
 
 import Navbar from "./components/layout/Navbar";
@@ -60,11 +60,11 @@ class App extends Component {
 
   // when component mounts, first thing it does is fetch all existing data in our db
   componentDidMount() {
-    this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval });
-    }
+    // this.getDataFromDb();
+    // if (!this.state.intervalIsSet) {
+    //   let interval = setInterval(this.getDataFromDb, 1000);
+    //   this.setState({ intervalIsSet: interval });
+    // }
   }
 
   // kill a process everytime we are done using it
@@ -75,32 +75,32 @@ class App extends Component {
     }
   }
 
-  // just a note, here, in the front end, we use the id key of our data object 
-  // in order to identify which we want to Update or delete.
-  // for our back end, we use the object id assigned by MongoDB to modify 
-  // data base entries
+  // // just a note, here, in the front end, we use the id key of our data object 
+  // // in order to identify which we want to Update or delete.
+  // // for our back end, we use the object id assigned by MongoDB to modify 
+  // // data base entries
 
-  // fetch data from our data base
-  getDataFromDb = () => {
-    fetch("http://localhost:3001/api/getData")
-      .then(data => data.json())
-      .then(res => this.setState({ data: res.data }));
-  };
+  // // fetch data from our data base
+  // getDataFromDb = () => {
+  //   fetch("http://localhost:3001/api/getData")
+  //     .then(data => data.json())
+  //     .then(res => this.setState({ data: res.data }));
+  // };
 
-  // our put method that uses our backend api
-  // to create new query into our data base
-  putDataToDB = message => {
-    let currentIds = this.state.data.map(data => data.id);
-    let idToBeAdded = 0;
-    while (currentIds.includes(idToBeAdded)) {
-      ++idToBeAdded;
-    }
+  // // our put method that uses our backend api
+  // // to create new query into our data base
+  // putDataToDB = message => {
+  //   let currentIds = this.state.data.map(data => data.id);
+  //   let idToBeAdded = 0;
+  //   while (currentIds.includes(idToBeAdded)) {
+  //     ++idToBeAdded;
+  //   }
 
-    axios.post("http://localhost:3001/api/putData", {
-      id: idToBeAdded,
-      message: message
-    });
-  };
+  //   axios.post("http://localhost:3001/api/putData", {
+  //     id: idToBeAdded,
+  //     message: message
+  //   });
+  // };
 
 
   // our delete method that uses our backend api 
@@ -149,7 +149,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/TicTacToe" component={TicTacToe}/>
-              <Route exact path="/Snake" component={Snake}/>
+              {/* <Route exact path="/Snake" component={Snake}/> */}
               <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
