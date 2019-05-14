@@ -10,6 +10,8 @@ import TicTacToe from './components/games/TicTacToe';
 import Snake from './components/games/Snake/snakeGame';
 import axios from "axios"
 
+import Home from "./components/dashboard/Home";
+import About from "./components/dashboard/About";
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
@@ -145,7 +147,8 @@ class App extends Component {
           <Router>
             <div className="App">
               <Navbar />
-              <Route exact path="/" component={Landing} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/About" component={About}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/TicTacToe" component={TicTacToe}/>

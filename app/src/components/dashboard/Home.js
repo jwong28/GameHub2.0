@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import TicTacToe from '../games/TicTacToe'
 import pongImg from "../img/pong.png";
-import ticTacToeImg from "../img/ticTacToe.png"
+import ticTacToeImg from "../img/ticTacToe.png";
+import snakeImg from "../img/snake.png";
+import rockPaperScissorsImg from "../img/rockPaperScissors.png";
+import flappyBirdImg from "../img/flappyBird.png";
+import crossyRoadImg from "../img/crossyRoad.png";
+import home from "../../stylesheets/home.css"
 // import Pong from "../games/Pong/pongReact";
 // import pongContent from "../games/Pong/pong.html";
 // var pongContent =require('../games/Pong/pong.html');
@@ -38,36 +42,6 @@ class Home extends Component {
     render() {
       return (
         <div class="container-fluid">
-        {/* <!-- Navigation --> */}
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="listing.html">Games</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Genre
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="listing.html">Action</a>
-                                <a class="dropdown-item" href="listing.html">Horror</a>
-                                <a class="dropdown-item" href="listing.html">Shooting</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>  
         {/* <!-- Jumbotron --> */}
         <div class="jumbotron">
             <h1 class="display-4">Welcome to our Game Hub!</h1>
@@ -82,9 +56,9 @@ class Home extends Component {
                         <h5 class="card-title">Snake Game</h5>
                     </div>
                     <div class="image m-0">
-                        {/* <a href="/GameHub2.0/src/Snake/snake.html">
-                            <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/snake.png">
-                        </a> */}
+                        <a href="/Snake">
+                            <img class="img-thumbnail img-responsive" src={snakeImg}/>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -97,6 +71,9 @@ class Home extends Component {
                         {/* <a href="/GameHub2.0/src/RockPaperScissors/rockpaperscissors.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/rockPaperScissors.png">
                         </a> */}
+                        <a href='/RockPaperScissors'>
+                            <img class="img-thumbnail img-responsive" src={rockPaperScissorsImg}/>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -120,8 +97,7 @@ class Home extends Component {
                             <TicTacToe />
                         </Route> */}
                         <a href='/TicTacToe'>
-                            <img class="img-thumbnail img-responsive" src={ticTacToeImg}>
-                            </img>
+                            <img class="img-thumbnail img-responsive" src={ticTacToeImg}/>
                         </a>
                         
                         {/* </Link> */}
@@ -139,6 +115,9 @@ class Home extends Component {
                         {/* <a href="/GameHub2.0/src/FlappyBird/flappyBird.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/flappyBird.png">
                         </a> */}
+                        <a href='/FlappyBird'>
+                            <img class="img-thumbnail img-responsive" src={flappyBirdImg}/>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -153,9 +132,7 @@ class Home extends Component {
                             {/* <div dangerouslySetInnerHTML={ {__html: pongContent} } /> */}
                             {/* <iframe src={pongContent }></iframe> */}
                             <a href="../games/Pong/pong.html">
-                            
-                            <img class="img-thumbnail img-responsive" src={pongImg}>
-                            </img>
+                                <img class="img-thumbnail img-responsive" src={pongImg}/>
                             </a>
                             {/* <pongImg/> */}
                     </div>
@@ -170,6 +147,9 @@ class Home extends Component {
                         {/* <a href="/GameHub2.0/src/CrossyRoad/crossyRoad.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/crossyRoad.png">
                         </a> */}
+                        <a href='/CrossyRoad'>
+                            <img class="img-thumbnail img-responsive" src={crossyRoadImg}/>
+                        </a>
                     </div>
                 </div>
             </div>
