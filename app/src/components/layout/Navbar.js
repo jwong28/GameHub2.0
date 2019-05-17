@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Home from "../dashboard/Home";
+import About from "../dashboard/About";
+import Scores from "../dashboard/Scores";
+import Login from "../auth/Login";
+import Register from "../auth/Register";
 
 class Navbar extends Component {
-  render() {
+ 
+    render() {
     return (
       <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
             <a class="navbar-brand" href="#"></a>
@@ -11,9 +17,11 @@ class Navbar extends Component {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="home.html">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
                     </li>
+                    
+                    {/* Future Implementation (currently not enough games)
                     <li class="nav-item">
                         <a class="nav-link" href="listing.html">Games</a>
                     </li>
@@ -26,9 +34,18 @@ class Navbar extends Component {
                                 <a class="dropdown-item" href="listing.html">Horror</a>
                                 <a class="dropdown-item" href="listing.html">Shooting</a>
                         </div>
+                    </li>*/}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Scores">Scores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
                     </li>
                 </ul>
             </div>
@@ -36,5 +53,4 @@ class Navbar extends Component {
     );
   }
 }
-
 export default Navbar;

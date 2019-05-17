@@ -6,7 +6,7 @@ import snakeImg from "../img/snake.png";
 import rockPaperScissorsImg from "../img/rockPaperScissors.png";
 import flappyBirdImg from "../img/flappyBird.png";
 import crossyRoadImg from "../img/crossyRoad.png";
-import home from "../../stylesheets/home.css"
+import "../../stylesheets/home.css"
 // import Pong from "../games/Pong/pongReact";
 // import pongContent from "../games/Pong/pong.html";
 // var pongContent =require('../games/Pong/pong.html');
@@ -41,7 +41,7 @@ class Home extends Component {
     
     render() {
       return (
-        <div class="container-fluid">
+        <div class="container-fluid app_background">
         {/* <!-- Jumbotron --> */}
         <div class="jumbotron">
             <h1 class="display-4">Welcome to our Game Hub!</h1>
@@ -56,7 +56,7 @@ class Home extends Component {
                         <h5 class="card-title">Snake Game</h5>
                     </div>
                     <div class="image m-0">
-                        <a href="/Snake">
+                        <a href="/Game/Snake">
                             <img class="img-thumbnail img-responsive" src={snakeImg}/>
                         </a>
                     </div>
@@ -68,10 +68,10 @@ class Home extends Component {
                         <h5 class="card-title">Rock Paper Scissors</h5>
                     </div>
                     <div class="image m-0">
-                        {/* <a href="/GameHub2.0/src/RockPaperScissors/rockpaperscissors.html">
+                        {/* <a href="/Game/GameHub2.0/src/RockPaperScissors/rockpaperscissors.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/rockPaperScissors.png">
                         </a> */}
-                        <a href='/RockPaperScissors'>
+                        <a href='/Game/RockPaperScissors'>
                             <img class="img-thumbnail img-responsive" src={rockPaperScissorsImg}/>
                         </a>
                     </div>
@@ -84,10 +84,10 @@ class Home extends Component {
                     </div>
                     <div class="image m-0">
                         {/* <TicTacToe/> */}
-                        {/* <a href="/GameHub2.0/public/index.html">
+                        {/* <a href="/Game/GameHub2.0/public/index.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/ticTacToe.png">
                         </a> */}
-                        {/* <a href="/GameHub2.0/public/index.html">
+                        {/* <a href="/Game/GameHub2.0/public/index.html">
                         </a> */}
                         {/* <Link to={TicTacToe}> */}
                         {/* <Switch>
@@ -96,7 +96,7 @@ class Home extends Component {
                           {/* <Route>
                             <TicTacToe />
                         </Route> */}
-                        <a href='/TicTacToe'>
+                        <a href='/Game/TicTacToe'>
                             <img class="img-thumbnail img-responsive" src={ticTacToeImg}/>
                         </a>
                         
@@ -112,10 +112,10 @@ class Home extends Component {
                         <h5 class="card-title">Flappy Bird</h5>
                     </div>
                     <div class="image m-0">
-                        {/* <a href="/GameHub2.0/src/FlappyBird/flappyBird.html">
+                        {/* <a href="/Game/GameHub2.0/src/FlappyBird/flappyBird.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/flappyBird.png">
                         </a> */}
-                        <a href='/FlappyBird'>
+                        <a href='/Game/FlappyBird'>
                             <img class="img-thumbnail img-responsive" src={flappyBirdImg}/>
                         </a>
                     </div>
@@ -131,7 +131,7 @@ class Home extends Component {
                             
                             {/* <div dangerouslySetInnerHTML={ {__html: pongContent} } /> */}
                             {/* <iframe src={pongContent }></iframe> */}
-                            <a href="../games/Pong/pong.html">
+                            <a href=".Game/./games/Pong/pong.html">
                                 <img class="img-thumbnail img-responsive" src={pongImg}/>
                             </a>
                             {/* <pongImg/> */}
@@ -144,10 +144,10 @@ class Home extends Component {
                         <h5 class="card-title">Crossy Road</h5>
                     </div>
                     <div class="image m-0">
-                        {/* <a href="/GameHub2.0/src/CrossyRoad/crossyRoad.html">
+                        {/* <a href="/Game/GameHub2.0/src/CrossyRoad/crossyRoad.html">
                             <img class="img-thumbnail img-responsive" src="/GameHub2.0/img/crossyRoad.png">
                         </a> */}
-                        <a href='/CrossyRoad'>
+                        <a href='/Game/CrossyRoad'>
                             <img class="img-thumbnail img-responsive" src={crossyRoadImg}/>
                         </a>
                     </div>
