@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import '../TicTacToe/TicTacToe.css';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { loginUser } from "../../../actions/authActions";
+import { sendScore } from '../../../actions/sendScore';
 
 function Square(props) {
   return (
@@ -52,6 +56,11 @@ class Game extends Component {
   }
 
   componentDidMount(){
+    // if (this.props.auth.isAuthenticated) {
+    //   console.log(this.props.auth.user.name);
+    //   // this.props.history.push("/dashboard");
+    // }
+    // console.log(this.props.auth.user.name);
 
     const displayClick = data => {
       const squares = this.state.squares.slice();
@@ -93,10 +102,26 @@ class Game extends Component {
     return times;
   }
 
+  send(gameScore){
+    // console.log("Winner")
+    // console.log(this.props.auth.user.name);
+    // console.log(gameScore);
+    const scoreData = {
+      game: "TicTacToe",
+      username: this.props.auth.user.name,
+      score: gameScore,
+    };
+
+    this.props.sendScore(scoreData);
+  }
+
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
+      this.send(this.playerScore() * 100);
+      // console.log("Winner")
+      // console.log(this.props.auth.user.name);
       status = 'Winner: ' + winner;
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
@@ -170,4 +195,14 @@ function calculateWinner(squares) {
   }
   return null;
 }
-export default Game;
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+export default connect(
+  mapStateToProps,
+  { sendScore }
+)(Game);
+
+// export default Game;
