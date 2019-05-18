@@ -1,0 +1,227 @@
+.container-fluid{
+    background-color: #0e227f;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    background-color: #0e227f;
+}
+
+header {
+    background: white;
+    padding: 20px;
+}
+
+header > h1 {
+    text-align: center;
+}
+
+tbody{
+    color: #d6d802;
+}
+
+#computer {
+    position: absolute;
+    top: 30px;
+    right: -30px;
+}
+
+#happy{
+    position: absolute;
+    top: 30px;
+    visibility: hidden;
+}
+
+#sad{
+    position: absolute;
+    top: 30px;
+    visibility: hidden;
+}
+
+#user {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+}
+
+.badge {
+    background: #E2584D;
+    color: white;
+    font-size: 14px;
+    padding: 2px 10px;
+}
+
+.choice {
+    border: 4px solid white;
+    background: transparent;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 20px;
+    margin: 0 15px;
+    transition: all 0.4s ease;
+}
+
+.choice:hover {
+    cursor: pointer;
+}
+
+.choice > img {
+    height: auto;
+    width: auto;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.choices {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.draw {
+    border: 4px solid grey;
+    box-shadow: 0 0 10px lightslategrey;
+}
+
+.emotion {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    visibility: visible;
+}
+
+.even > td > a{
+    color: #d6d802;
+    text-decoration: none;
+}
+
+.image{
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+
+.image img{
+    position: absolute;
+    min-height: 100%;
+}
+
+.lose{
+    border: 4px solid red;
+    box-shadow: 0 0 10px lightcoral;
+}
+
+.navbar{
+    padding: .8rem;
+}
+
+.odd{
+    background-color: rgb(9, 39, 145);
+}
+
+.odd > td > a{
+    color: #d6d802;
+    text-decoration: none;
+}
+
+.result {
+    font-size: 40px;
+    color: white;
+}
+
+.result > p{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align: center;
+    width: 200px;
+    color: white;
+    font-size: 46px;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.win{
+    border: 4px solid green;
+    box-shadow: 0 0 10px lightgreen;
+}
+
+.odd:hover, .even:hover{
+    background-color: #696969;
+}
+
+/* .content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+} */
+
+
+
+/* Media Queries
+@media (max-width: 992px){
+
+}
+@media (max-width: 768px){
+    
+}
+@media (max-width: 576px){
+    
+}
+/* Fixed Backgroud Image 
+figure{
+    position: relative;
+    width: 100%;
+    height: 60%;
+    margin: 0!important;
+}
+.fixed-wrap{
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#fixed{
+    background-image: url('GameHub2.0/img/gecko.png');
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+}
+/* Bootstrap Padding Fix 
+[class*="col-"]{
+    padding: 1rem;
+} */

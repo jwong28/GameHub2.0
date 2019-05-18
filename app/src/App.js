@@ -9,7 +9,7 @@ import './App.css';
 import TicTacToe from './components/games/TicTacToe';
 import Snake from './components/games/Snake/snakeGame';
 //import Pong from './components/games/Pong/pong';
-//import RockPaperScissors from './components/games/RockPaperScissors/rockpaperscissors.html';
+import RockPaperScissors from './components/games/RockPaperScissors/rpsgame';
 //import FlappyBird from './components/games/FlappyBird/flappyBird'
 import axios from "axios"
 
@@ -156,8 +156,8 @@ class App extends Component {
               <Route exact path="/Scores" component={Scores}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              {/*<Route exact path="/Game/RockPaperScissors" component={RockPaperScissors} />
-              <Route exact path="/Game/FlappyBird" component={FlappyBird} />
+              <Route exact path="/Game/RockPaperScissors" component={RockPaperScissors} />
+              {/*<Route exact path="/Game/FlappyBird" component={FlappyBird} />
               <Route exact path="/Game/Pong" component={Pong}/>*/}
               <Route exact path="/Game/TicTacToe" component={TicTacToe}/>
               <Route exact path="/Game/Snake" component={Snake}/>
