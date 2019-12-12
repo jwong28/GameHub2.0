@@ -1,27 +1,56 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Home from "../dashboard/Home";
+import About from "../dashboard/About";
+import Scores from "../dashboard/Scores";
+import Login from "../auth/Login";
+import Register from "../auth/Register";
 
 class Navbar extends Component {
-  render() {
+ 
+    render() {
     return (
-      <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
-            <Link
-              to="/"
-              style={{
-                fontFamily: "monospace"
-              }}
-              className="col s5 brand-logo center black-text"
-            >
-              <i className="material-icons">code</i>
-              App
-            </Link>
-          </div>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    
+                    {/* Future Implementation (currently not enough games)
+                    <li class="nav-item">
+                        <a class="nav-link" href="listing.html">Games</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Genre
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="listing.html">Action</a>
+                                <a class="dropdown-item" href="listing.html">Horror</a>
+                                <a class="dropdown-item" href="listing.html">Shooting</a>
+                        </div>
+                    </li>*/}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Scores">Scores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-      </div>
     );
   }
 }
-
 export default Navbar;

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app_background {
+    background-color: #0e227f;
+}
+
+header {
+    background: white;
+    padding: 20px;
+}
+
+header > h1 {
+    text-align: center;
+}
+
+.image{
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+    margin-bottom: 20px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.image img{
+    position: absolute;
+    min-height: 100%;
+}
+
+.navbar{
+    padding: .8rem;
+}

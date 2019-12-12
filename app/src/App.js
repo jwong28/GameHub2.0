@@ -7,9 +7,15 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import './App.css';
 
 import TicTacToe from './components/games/TicTacToe';
-// import Snake from './components/games/Snake/snakeGame';
+import Snake from './components/games/Snake/snakeGame';
+//import Pong from './components/games/Pong/pong';
+import RockPaperScissors from './components/games/RockPaperScissors/rpsgame';
+//import FlappyBird from './components/games/FlappyBird/flappyBird'
 import axios from "axios"
 
+import Home from "./components/dashboard/Home";
+import About from "./components/dashboard/About";
+import Scores from "./components/dashboard/Scores";
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
@@ -145,11 +151,16 @@ class App extends Component {
           <Router>
             <div className="App">
               <Navbar />
-              <Route exact path="/" component={Landing} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/About" component={About}/>
+              <Route exact path="/Scores" component={Scores}/>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/TicTacToe" component={TicTacToe}/>
-              {/* <Route exact path="/Snake" component={Snake}/> */}
+              <Route exact path="/Game/RockPaperScissors" component={RockPaperScissors} />
+              {/*<Route exact path="/Game/FlappyBird" component={FlappyBird} />
+              <Route exact path="/Game/Pong" component={Pong}/>*/}
+              <Route exact path="/Game/TicTacToe" component={TicTacToe}/>
+              <Route exact path="/Game/Snake" component={Snake}/>
               <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>

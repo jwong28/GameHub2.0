@@ -102,17 +102,21 @@ function userChoice(choice){
 }
 
 function main(){
+    if(rock)
     rock.addEventListener('click', function() {
         userChoice('r');
     });
 
+    if(paper)
     paper.addEventListener('click', function() {
         userChoice('p');
     });
 
+    if(scissor)
     scissor.addEventListener('click', function() {
         userChoice('s');
     });
 }
 
 main();
+
